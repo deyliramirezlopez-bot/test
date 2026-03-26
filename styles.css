@@ -1,276 +1,105 @@
+:root {
+  --green-900: #0a3d2e;
+  --green-700: #0f7a5a;
+  --green-500: #17a673;
+  --cream: #f6f5ef;
+  --text: #1a1a1a;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text);
+  background: var(--cream);
+  line-height: 1.5;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Navigation */
-.navbar {
-    background-color: #2c3e50;
-    color: white;
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-menu a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.nav-menu a:hover {
-    color: #3498db;
-}
-
-/* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 4rem 0;
-    text-align: center;
+  color: #fff;
+  background: linear-gradient(120deg, rgba(10, 61, 46, 0.9), rgba(23, 166, 115, 0.8)),
+    url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80') center/cover;
+  padding: 1rem 1.25rem 4rem;
 }
 
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.hero p {
-    font-size: 1.2rem;
+.nav a {
+  color: #eafff6;
+  text-decoration: none;
 }
 
-/* Booking Section */
-.booking {
-    padding: 3rem 0;
-    background-color: #f8f9fa;
+.brand {
+  font-weight: 800;
+  margin-right: auto;
 }
 
-.booking h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
+.hero-content {
+  max-width: 760px;
+  margin: 3rem auto 0;
 }
 
-.search-form {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+.tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
+h1 {
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  margin: 0.6rem 0;
 }
 
-.form-group label {
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: #2c3e50;
+.cta,
+button {
+  display: inline-block;
+  margin-top: 0.75rem;
+  background: var(--green-500);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.form-group input {
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    transition: border-color 0.3s;
+.section {
+  width: min(1080px, 92vw);
+  margin: 2.2rem auto;
 }
 
-.form-group input:focus {
-    outline: none;
-    border-color: #667eea;
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-.btn-primary {
-    background-color: #667eea;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    grid-column: 1 / -1;
+.card {
+  background: #fff;
+  border: 1px solid #dce6e2;
+  border-radius: 12px;
+  padding: 1rem;
 }
 
-.btn-primary:hover {
-    background-color: #764ba2;
+.alt {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.2rem;
+  border: 1px solid #dce6e2;
 }
 
-/* Results Section */
-.results {
-    padding: 3rem 0;
-    background-color: #f8f9fa;
-}
-
-.results.hidden {
-    display: none;
-}
-
-.results h2 {
-    margin-bottom: 2rem;
-    font-size: 2rem;
-}
-
-.buses-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.bus-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-}
-
-.bus-card:hover {
-    transform: translateY(-5px);
-}
-
-.bus-card h3 {
-    color: #667eea;
-    margin-bottom: 1rem;
-}
-
-.bus-info {
-    margin: 1rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.bus-info p {
-    margin: 0.5rem 0;
-}
-
-.price {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #27ae60;
-}
-
-.btn-book {
-    background-color: #27ae60;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 1rem;
-    transition: background-color 0.3s;
-}
-
-.btn-book:hover {
-    background-color: #229954;
-}
-
-/* Features Section */
-.features {
-    padding: 3rem 0;
-}
-
-.features h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.feature {
-    text-align: center;
-    padding: 2rem;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    transition: transform 0.3s;
-}
-
-.feature:hover {
-    transform: scale(1.05);
-}
-
-.feature-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.feature h3 {
-    margin-bottom: 0.5rem;
-}
-
-/* Footer */
-.footer {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 3rem;
-}
-
-.footer p {
-    margin: 0.5rem 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .nav-menu {
-        gap: 1rem;
-        font-size: 0.9rem;
-    }
-
-    .search-form {
-        grid-template-columns: 1fr;
-    }
-
-    .buses-list {
-        grid-template-columns: 1fr;
-    }
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #334155;
 }
