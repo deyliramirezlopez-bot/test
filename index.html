@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelBus - Book Your Journey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">🚌 TravelBus</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="routes.html">Routes</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Book Your Next Journey</h1>
+            <p>Fast, comfortable, and affordable bus travel</p>
+        </div>
+    </section>
+
+    <!-- Search & Booking Section -->
+    <section class="booking">
+        <div class="container">
+            <h2>Search & Book Tickets</h2>
+            <form class="search-form" onsubmit="handleSearch(event)">
+                <div class="form-group">
+                    <label>From</label>
+                    <input type="text" id="from" placeholder="Departure city" required>
+                </div>
+                <div class="form-group">
+                    <label>To</label>
+                    <input type="text" id="to" placeholder="Destination city" required>
+                </div>
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label>Passengers</label>
+                    <input type="number" id="passengers" min="1" max="6" value="1" required>
+                </div>
+                <button type="submit" class="btn-primary">Search Buses</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Results Section (Hidden by default) -->
+    <section class="results hidden" id="resultsSection">
+        <div class="container">
+            <h2>Available Buses</h2>
+            <div id="resultsList" class="buses-list"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose TravelBus?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <h3>Best Prices</h3>
+                    <p>Competitive fares and special discounts</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⏱</div>
+                    <h3>On Time</h3>
+                    <p>Reliable schedules and real-time tracking</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">😊</div>
+                    <h3>Comfort</h3>
+                    <p>Modern buses with comfortable seating</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Safe & Secure</h3>
+                    <p>Professional drivers and secure payment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 TravelBus. All rights reserved.</p>
+            <p>Email: info@travelbus.com | Phone: 1-800-TRAVELBUS</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
